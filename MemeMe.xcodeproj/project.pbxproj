@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		A8BFAFFC1ACCD9C200425B34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BFAFFB1ACCD9C200425B34 /* AppDelegate.swift */; };
-		A8BFAFFE1ACCD9C200425B34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BFAFFD1ACCD9C200425B34 /* ViewController.swift */; };
 		A8BFB0011ACCD9C200425B34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8BFAFFF1ACCD9C200425B34 /* Main.storyboard */; };
 		A8BFB0031ACCD9C200425B34 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8BFB0021ACCD9C200425B34 /* Images.xcassets */; };
 		A8BFB0061ACCD9C200425B34 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8BFB0041ACCD9C200425B34 /* LaunchScreen.xib */; };
 		A8BFB0121ACCD9C200425B34 /* MemeMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BFB0111ACCD9C200425B34 /* MemeMeTests.swift */; };
+		A8BFB01E1ACCFD4F00425B34 /* MemeEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BFB01D1ACCFD4F00425B34 /* MemeEditorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +29,13 @@
 		A8BFAFF61ACCD9C200425B34 /* MemeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8BFAFFA1ACCD9C200425B34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8BFAFFB1ACCD9C200425B34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A8BFAFFD1ACCD9C200425B34 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A8BFB0001ACCD9C200425B34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A8BFB0021ACCD9C200425B34 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A8BFB0051ACCD9C200425B34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		A8BFB00B1ACCD9C200425B34 /* MemeMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemeMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8BFB0101ACCD9C200425B34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8BFB0111ACCD9C200425B34 /* MemeMeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeMeTests.swift; sourceTree = "<group>"; };
+		A8BFB01D1ACCFD4F00425B34 /* MemeEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeEditorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,11 +78,11 @@
 			isa = PBXGroup;
 			children = (
 				A8BFAFFB1ACCD9C200425B34 /* AppDelegate.swift */,
-				A8BFAFFD1ACCD9C200425B34 /* ViewController.swift */,
 				A8BFAFFF1ACCD9C200425B34 /* Main.storyboard */,
 				A8BFB0021ACCD9C200425B34 /* Images.xcassets */,
 				A8BFB0041ACCD9C200425B34 /* LaunchScreen.xib */,
 				A8BFAFF91ACCD9C200425B34 /* Supporting Files */,
+				A8BFB01D1ACCFD4F00425B34 /* MemeEditorViewController.swift */,
 			);
 			path = MemeMe;
 			sourceTree = "<group>";
@@ -212,8 +212,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8BFAFFE1ACCD9C200425B34 /* ViewController.swift in Sources */,
 				A8BFAFFC1ACCD9C200425B34 /* AppDelegate.swift in Sources */,
+				A8BFB01E1ACCFD4F00425B34 /* MemeEditorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
