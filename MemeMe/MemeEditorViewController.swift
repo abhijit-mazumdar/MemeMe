@@ -7,15 +7,36 @@
 //
 
 import UIKit
+import Foundation
 
-class MemeEditorViewController: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class MemeEditorViewController: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var imagePickerView: UIImageView!
     
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     
+    @IBOutlet weak var topTextField: UITextField!
+    
+    @IBOutlet weak var bottomTextField: UITextField!
+    
+    // Setting the textfield's stroke and fill
     override func viewDidLoad() {
-    //TODO
+        let memeTextAttributes = [
+            NSStrokeColorAttributeName : UIColor.blackColor(),
+            NSForegroundColorAttributeName : UIColor.whiteColor(),
+            NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+            NSStrokeWidthAttributeName : -2.0
+        ]
+        
+        topTextField.text = "TOP"
+        topTextField.textAlignment = .Center
+        topTextField.defaultTextAttributes = memeTextAttributes
+        topTextField.delegate = self
+        
+        bottomTextField.text = "BOTTOM"
+        bottomTextField.textAlignment = .Center
+        bottomTextField.defaultTextAttributes = memeTextAttributes
+        bottomTextField.delegate = self
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -40,16 +61,12 @@ class MemeEditorViewController: UIViewController , UIImagePickerControllerDelega
 
     }
     
-    
     //Did Finish Picking
     func imagePickerController(pickerController: UIImagePickerController,
         didFinishPickingMediaWithInfo info: NSDictionary!){
-            
             if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
                 self.imagePickerView.image = image
-                
             }
-            
             self.dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -57,6 +74,20 @@ class MemeEditorViewController: UIViewController , UIImagePickerControllerDelega
     func imagePickerControllerDidCancel(pickerController: UIImagePickerController){
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    // Clear default text before editing textfield
+    func textFieldDidBeginEditing(textField: UITextField) {
+        topTextField.clearsOnBeginEditing = true
+        bottomTextField.clearsOnBeginEditing = true
+    }
+    
+    // Dismiss keyboard after edit text and return
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        topTextField.resignFirstResponder()
+        bottomTextField.resignFirstResponder()
+        return true
+    }
+    
     
 
 }

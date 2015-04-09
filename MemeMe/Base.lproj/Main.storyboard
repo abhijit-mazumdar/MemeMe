@@ -27,16 +27,32 @@
                                 <items>
                                     <barButtonItem title="Album" id="bS4-Za-w7W">
                                         <connections>
-                                            <action selector="pickAnImage:" destination="vWG-Bm-qs7" id="LWC-Xx-l6x"/>
+                                            <action selector="pickAnImageFromAlbum:" destination="vWG-Bm-qs7" id="axi-Za-TQp"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem title="Camera" id="Nk2-2a-DFv">
                                         <connections>
-                                            <action selector="takeAPictureUsingCamera:" destination="vWG-Bm-qs7" id="QOL-DD-xtr"/>
+                                            <action selector="pickAnImageFromCamera:" destination="vWG-Bm-qs7" id="437-gn-hhi"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="12" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="v85-rt-8Ql">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" enablesReturnKeyAutomatically="YES"/>
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="71" y="116" width="461" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="12" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="iCU-YM-kPc">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" enablesReturnKeyAutomatically="YES"/>
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="80" y="610" width="440" height="30"/>
+                                </variation>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -44,8 +60,12 @@
                             <constraint firstItem="Bt2-uk-nB2" firstAttribute="top" secondItem="3oZ-eg-xXj" secondAttribute="bottom" id="5QJ-NO-K1f"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3oZ-eg-xXj" secondAttribute="trailing" constant="-16" id="6SY-rN-ND5"/>
                             <constraint firstItem="vbW-hT-l7U" firstAttribute="leading" secondItem="nbA-5I-mKr" secondAttribute="leadingMargin" constant="-16" id="8bx-Nj-K18"/>
+                            <constraint firstItem="v85-rt-8Ql" firstAttribute="centerX" secondItem="vbW-hT-l7U" secondAttribute="centerX" constant="0.5" id="FHc-kK-r9a"/>
                             <constraint firstAttribute="centerY" secondItem="vbW-hT-l7U" secondAttribute="centerY" id="XmX-5e-Rho"/>
+                            <constraint firstItem="iCU-YM-kPc" firstAttribute="top" secondItem="vbW-hT-l7U" secondAttribute="bottom" constant="100" id="aDU-YB-QiF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vbW-hT-l7U" secondAttribute="trailing" constant="-16" id="d7N-Z0-Vh0"/>
+                            <constraint firstItem="vbW-hT-l7U" firstAttribute="top" secondItem="v85-rt-8Ql" secondAttribute="bottom" constant="100" id="sFV-RV-B2w"/>
+                            <constraint firstItem="iCU-YM-kPc" firstAttribute="centerX" secondItem="vbW-hT-l7U" secondAttribute="centerX" constant="0.5" id="tpQ-ou-RFa"/>
                             <constraint firstItem="3oZ-eg-xXj" firstAttribute="top" secondItem="vbW-hT-l7U" secondAttribute="bottom" constant="186" id="vno-wf-uES"/>
                             <constraint firstItem="3oZ-eg-xXj" firstAttribute="leading" secondItem="nbA-5I-mKr" secondAttribute="leadingMargin" constant="-16" id="xJ7-xV-FNO"/>
                         </constraints>
@@ -53,12 +73,18 @@
                             <mask key="subviews">
                                 <exclude reference="vbW-hT-l7U"/>
                                 <exclude reference="3oZ-eg-xXj"/>
+                                <exclude reference="v85-rt-8Ql"/>
+                                <exclude reference="iCU-YM-kPc"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="3a2-fM-f7b"/>
                                 <exclude reference="8bx-Nj-K18"/>
                                 <exclude reference="XmX-5e-Rho"/>
                                 <exclude reference="d7N-Z0-Vh0"/>
+                                <exclude reference="sFV-RV-B2w"/>
+                                <exclude reference="FHc-kK-r9a"/>
+                                <exclude reference="aDU-YB-QiF"/>
+                                <exclude reference="tpQ-ou-RFa"/>
                                 <exclude reference="6SY-rN-ND5"/>
                                 <exclude reference="vno-wf-uES"/>
                                 <exclude reference="xJ7-xV-FNO"/>
@@ -69,12 +95,18 @@
                             <mask key="subviews">
                                 <include reference="vbW-hT-l7U"/>
                                 <include reference="3oZ-eg-xXj"/>
+                                <include reference="v85-rt-8Ql"/>
+                                <include reference="iCU-YM-kPc"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="3a2-fM-f7b"/>
                                 <include reference="8bx-Nj-K18"/>
                                 <include reference="XmX-5e-Rho"/>
                                 <include reference="d7N-Z0-Vh0"/>
+                                <include reference="sFV-RV-B2w"/>
+                                <include reference="FHc-kK-r9a"/>
+                                <include reference="aDU-YB-QiF"/>
+                                <include reference="tpQ-ou-RFa"/>
                                 <include reference="6SY-rN-ND5"/>
                                 <include reference="vno-wf-uES"/>
                                 <include reference="xJ7-xV-FNO"/>
@@ -83,8 +115,10 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="bottomTextField" destination="iCU-YM-kPc" id="NVs-WA-XyZ"/>
                         <outlet property="cameraButton" destination="Nk2-2a-DFv" id="HdA-ii-ufj"/>
                         <outlet property="imagePickerView" destination="vbW-hT-l7U" id="D5A-PE-nd5"/>
+                        <outlet property="topTextField" destination="v85-rt-8Ql" id="ZiF-8l-igf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UNc-Zx-eNG" userLabel="First Responder" sceneMemberID="firstResponder"/>
