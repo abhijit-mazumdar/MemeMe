@@ -16,7 +16,7 @@
                     <view key="view" contentMode="scaleToFill" id="nbA-5I-mKr">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vbW-hT-l7U">
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vbW-hT-l7U">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="heightClass=regular" misplaced="YES">
                                     <rect key="frame" x="0.0" y="20" width="600" height="736"/>
@@ -28,6 +28,11 @@
                                     <barButtonItem title="Album" id="bS4-Za-w7W">
                                         <connections>
                                             <action selector="pickAnImage:" destination="vWG-Bm-qs7" id="LWC-Xx-l6x"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Camera" id="Nk2-2a-DFv">
+                                        <connections>
+                                            <action selector="takeAPictureUsingCamera:" destination="vWG-Bm-qs7" id="QOL-DD-xtr"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -78,6 +83,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="cameraButton" destination="Nk2-2a-DFv" id="HdA-ii-ufj"/>
                         <outlet property="imagePickerView" destination="vbW-hT-l7U" id="D5A-PE-nd5"/>
                     </connections>
                 </viewController>
