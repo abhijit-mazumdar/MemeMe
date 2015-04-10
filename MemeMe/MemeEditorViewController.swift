@@ -125,6 +125,21 @@ class MemeEditorViewController: UIViewController , UIImagePickerControllerDelega
         return true
     }
     
+    // Initialize the meme model object
+    func save(){
+        var meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imagePickerView.image!, memedImage: generateMemedImage())
+    }
+    
+    // Render view to an image
+    func generateMemedImage() -> UIImage
+    {
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        self.view.drawViewHierarchyInRect(self.view.frame,afterScreenUpdates: true)
+        let memedImage : UIImage =
+        UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return memedImage
+    }
     
 
 }
