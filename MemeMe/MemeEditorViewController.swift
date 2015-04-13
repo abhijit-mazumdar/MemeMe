@@ -15,6 +15,10 @@ class MemeEditorViewController: UIViewController , UIImagePickerControllerDelega
     
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     
+    @IBOutlet weak var shareButton: UIBarButtonItem!
+    
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
+    
     @IBOutlet weak var topTextField: UITextField!
     
     @IBOutlet weak var bottomTextField: UITextField!
@@ -40,7 +44,11 @@ class MemeEditorViewController: UIViewController , UIImagePickerControllerDelega
     }
     
     override func viewWillAppear(animated: Bool) {
+        // Disable buttons based on source type available
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
+        if (self.imagePickerView.image == nil){
+            shareButton.enabled = false
+        }
         super.viewWillAppear(animated)
         self.subscribeToKeyboardNotifications()
     }
@@ -82,6 +90,7 @@ class MemeEditorViewController: UIViewController , UIImagePickerControllerDelega
     
     // Click Album button to pick image
     @IBAction func pickAnImageFromAlbum(sender: AnyObject) {
+        shareButton.enabled = true
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
         pickerController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
@@ -90,6 +99,7 @@ class MemeEditorViewController: UIViewController , UIImagePickerControllerDelega
     
     // Click Camera button to pick image
     @IBAction func pickAnImageFromCamera(sender: AnyObject) {
+        shareButton.enabled = true
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
         pickerController.allowsEditing=true
@@ -125,19 +135,50 @@ class MemeEditorViewController: UIViewController , UIImagePickerControllerDelega
         return true
     }
     
+    // Click the share button
+    @IBAction func shareMeme(sender: AnyObject) {
+        let memedImage = generateMemedImage()
+        let activityVC = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
+        self.presentViewController(activityVC, animated: true, completion: nil)
+        
+        activityVC.completionWithItemsHandler = {
+            (s: String!, ok: Bool, items: [AnyObject]!, err:NSError!) -> Void in
+            self.save()
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+    }
+    
+    
+    @IBAction func cancelButton(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     // Initialize the meme model object
     func save(){
         var meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imagePickerView.image!, memedImage: generateMemedImage())
+        
+        // Add it to the memes array in the Application Delegate
+        (UIApplication.sharedApplication().delegate as
+            AppDelegate).memes.append(meme)
     }
     
     // Render view to an image
     func generateMemedImage() -> UIImage
     {
+        // Hide tool and nav bar
+        self.navigationController?.setToolbarHidden(true, animated: true)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        
         UIGraphicsBeginImageContext(self.view.frame.size)
         self.view.drawViewHierarchyInRect(self.view.frame,afterScreenUpdates: true)
         let memedImage : UIImage =
         UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
+        
+        // Show tool and nav bar
+        self.navigationController?.setToolbarHidden(false, animated: true)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        
         return memedImage
     }
     
