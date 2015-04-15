@@ -51,11 +51,15 @@ class MemeEditorViewController: UIViewController , UIImagePickerControllerDelega
         }
         super.viewWillAppear(animated)
         self.subscribeToKeyboardNotifications()
+        self.navigationController?.setToolbarHidden(true, animated: true)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         self.unsubscribeFromKeyboardNotifications()
+        self.navigationController?.setToolbarHidden(false, animated: true)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     func subscribeToKeyboardNotifications() {

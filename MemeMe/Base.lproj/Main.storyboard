@@ -151,7 +151,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wgQ-uX-0bo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="258" y="365.25"/>
+            <point key="canvasLocation" x="717" y="372"/>
         </scene>
         <!--Sent Memes-->
         <scene sceneID="wKg-7r-fWQ">
@@ -204,7 +204,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YYH-5s-9ou">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
-                                    <navigationItem title="Sent Memes" id="Ccj-cL-nvy"/>
+                                    <navigationItem id="Ccj-cL-nvy"/>
                                 </items>
                             </navigationBar>
                         </subviews>
@@ -304,23 +304,23 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="7Q2-ew-5Ed">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ujg-pP-F59">
-                            <size key="itemSize" width="250" height="208"/>
+                            <size key="itemSize" width="209" height="187"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" reuseIdentifier="CustomMemeCell" id="tHL-P1-B9b" customClass="CustomMemeCell" customModule="MemeMe" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CustomMemeCell" id="edr-GL-q74" customClass="CustomMemeCell" customModule="MemeMe" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="250" height="208"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="209" height="187"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wp2-fd-hlB">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dda-od-6iR">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                             <variation key="heightClass=regular" fixedFrame="YES">
-                                                <rect key="frame" x="0.0" y="0.0" width="250" height="208"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="209" height="187"/>
                                             </variation>
                                         </imageView>
                                     </subviews>
@@ -328,14 +328,17 @@
                                 </view>
                                 <variation key="default">
                                     <mask key="subviews">
-                                        <exclude reference="Wp2-fd-hlB"/>
+                                        <exclude reference="dda-od-6iR"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular">
                                     <mask key="subviews">
-                                        <include reference="Wp2-fd-hlB"/>
+                                        <include reference="dda-od-6iR"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outlet property="CustomCellImageView" destination="dda-od-6iR" id="uN3-6I-pel"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
