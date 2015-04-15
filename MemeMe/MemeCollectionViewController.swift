@@ -36,4 +36,5 @@ class MemeCollectionViewController : UICollectionViewController,UICollectionView
         memeDetailController.meme = self.memes[indexPath.row]
         self.navigationController!.pushViewController(memeDetailController, animated: true)
     }
+
 }

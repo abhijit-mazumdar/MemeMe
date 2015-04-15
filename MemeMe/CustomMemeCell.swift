@@ -9,14 +9,8 @@
 import UIKit
 
 class CustomMemeCell: UICollectionViewCell {
-
+    weak var CustomCellImageView: UIImageView!
     
-    @IBOutlet weak var CustomCellImageView: UIImageView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
     
-
 }
