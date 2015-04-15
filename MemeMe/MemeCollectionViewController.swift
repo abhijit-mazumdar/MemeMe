@@ -27,6 +27,8 @@ class MemeCollectionViewController : UICollectionViewController,UICollectionView
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CustomMemeCell", forIndexPath: indexPath) as CustomMemeCell
         let meme = memes[indexPath.item]
         cell.CustomCellImageView.image = meme.memedImage
+        cell.top.text = meme.topText
+        cell.bottom.text = meme.bottomText
         return cell
         
     }
@@ -36,5 +38,5 @@ class MemeCollectionViewController : UICollectionViewController,UICollectionView
         memeDetailController.meme = self.memes[indexPath.row]
         self.navigationController!.pushViewController(memeDetailController, animated: true)
     }
-
+        
 }

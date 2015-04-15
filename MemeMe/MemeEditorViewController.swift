@@ -149,6 +149,8 @@ class MemeEditorViewController: UIViewController , UIImagePickerControllerDelega
             (s: String!, ok: Bool, items: [AnyObject]!, err:NSError!) -> Void in
             self.save()
             self.dismissViewControllerAnimated(true, completion: nil)
+            
+            self.performSegueWithIdentifier("sentMemesSegue", sender: self)
         }
         
     }
