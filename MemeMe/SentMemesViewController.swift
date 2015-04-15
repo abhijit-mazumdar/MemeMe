@@ -9,6 +9,6 @@
 import UIKit
 
 class SentMemesViewController : UITabBarController{
-    
+    var memes: [Meme]!
 }
 
