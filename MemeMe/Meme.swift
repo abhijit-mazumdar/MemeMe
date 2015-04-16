@@ -16,6 +16,11 @@ class Meme: NSObject {
     var bottomText: NSString!
     var originalImage: UIImage!
     var memedImage: UIImage!
+    var fullText: NSString{
+        get{
+            return self.topText + " " + self.bottomText
+        }
+    }
     
     init(topText: NSString, bottomText: NSString, originalImage: UIImage, memedImage: UIImage) {
         self.topText = topText

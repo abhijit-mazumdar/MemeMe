@@ -25,6 +25,7 @@ class MemeEditorViewController: UIViewController , UIImagePickerControllerDelega
     
     // Setting the textfield's stroke and fill
     override func viewDidLoad() {
+        super.viewDidLoad()
         let memeTextAttributes = [
             NSStrokeColorAttributeName : UIColor.blackColor(),
             NSForegroundColorAttributeName : UIColor.whiteColor(),
@@ -44,12 +45,12 @@ class MemeEditorViewController: UIViewController , UIImagePickerControllerDelega
     }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         // Disable buttons based on source type available
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         if (self.imagePickerView.image == nil){
             shareButton.enabled = false
         }
-        super.viewWillAppear(animated)
         self.subscribeToKeyboardNotifications()
         self.navigationController?.setToolbarHidden(true, animated: true)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
@@ -60,6 +61,11 @@ class MemeEditorViewController: UIViewController , UIImagePickerControllerDelega
         self.unsubscribeFromKeyboardNotifications()
         self.navigationController?.setToolbarHidden(false, animated: true)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+       
     }
     
     func subscribeToKeyboardNotifications() {
@@ -78,12 +84,14 @@ class MemeEditorViewController: UIViewController , UIImagePickerControllerDelega
     
     //Shift view frame up when keyboard appears
     func keyboardWillShow(notification: NSNotification) {
-        self.view.frame.origin.y -= getKeyboardHeight(notification)
+        //self.view.frame.origin.y -= getKeyboardHeight(notification)
+        self.view.frame.origin.y = -getKeyboardHeight(notification)
     }
     
     //Shift view frame down when keyboard disappears
     func keyboardWillHide(notification: NSNotification) {
-        self.view.frame.origin.y += getKeyboardHeight(notification)
+        //self.view.frame.origin.y += getKeyboardHeight(notification)
+        self.view.frame.origin.y = 0
     }
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {

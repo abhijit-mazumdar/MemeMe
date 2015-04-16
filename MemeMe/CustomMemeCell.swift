@@ -11,10 +11,8 @@ import UIKit
 class CustomMemeCell: UICollectionViewCell {
     
     
-    @IBOutlet weak var CustomCellImageView: UIImageView!
+    @IBOutlet weak var customCellImageView: UIImageView!
     
-    @IBOutlet weak var top: UILabel!
-    
-    @IBOutlet weak var bottom: UILabel!
+    @IBOutlet weak var fullMemeText: UILabel!
     
 }
