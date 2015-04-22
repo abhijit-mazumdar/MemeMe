@@ -179,6 +179,7 @@
 				TargetAttributes = {
 					A8BFAFF51ACCD9C200425B34 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 962PEMBW8K;
 					};
 					A8BFB00A1ACCD9C200425B34 = {
 						CreatedOnToolsVersion = 6.2;
@@ -363,6 +364,7 @@
 				INFOPLIST_FILE = MemeMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -373,6 +375,7 @@
 				INFOPLIST_FILE = MemeMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
