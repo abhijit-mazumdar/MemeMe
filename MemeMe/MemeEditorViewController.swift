@@ -63,11 +63,7 @@ class MemeEditorViewController: UIViewController , UIImagePickerControllerDelega
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
-       
-    }
-    
+   
     func subscribeToKeyboardNotifications() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         
