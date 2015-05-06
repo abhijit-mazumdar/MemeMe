@@ -15,7 +15,7 @@ class MemeCollectionViewController : UICollectionViewController,UICollectionView
         super.viewWillAppear(animated)
         
         let object = UIApplication.sharedApplication().delegate
-        let appDelegate = object as AppDelegate
+        let appDelegate = object as! AppDelegate
         memes = appDelegate.memes
     }
     
@@ -24,16 +24,16 @@ class MemeCollectionViewController : UICollectionViewController,UICollectionView
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CustomMemeCell", forIndexPath: indexPath) as CustomMemeCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CustomMemeCell", forIndexPath: indexPath) as! CustomMemeCell
         let meme = memes[indexPath.item]
         cell.customCellImageView.image = meme.memedImage
-        cell.fullMemeText.text = meme.fullText
+        cell.fullMemeText.text = meme.fullText as String
         return cell
         
     }
     
     override func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
-        let memeDetailController = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as MemeDetailViewController
+        let memeDetailController = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
         memeDetailController.meme = self.memes[indexPath.row]
         self.navigationController!.pushViewController(memeDetailController, animated: true)
     }

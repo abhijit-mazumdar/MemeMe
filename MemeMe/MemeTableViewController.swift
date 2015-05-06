@@ -15,7 +15,7 @@ class MemeTableViewController : UITableViewController,UITableViewDataSource {
         super.viewWillAppear(animated)
         
         let object = UIApplication.sharedApplication().delegate
-        let appDelegate = object as AppDelegate
+        let appDelegate = object as! AppDelegate
         memes = appDelegate.memes
     }
     
@@ -24,17 +24,17 @@ class MemeTableViewController : UITableViewController,UITableViewDataSource {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("MemeTableViewCell") as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("MemeTableViewCell") as! UITableViewCell
         let meme = self.memes[indexPath.row]
         
-        cell.textLabel?.text = meme.fullText
+        cell.textLabel?.text = meme.fullText as String
         cell.imageView?.image = meme.memedImage
         
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let memeDetailController = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as MemeDetailViewController
+        let memeDetailController = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
         memeDetailController.meme = self.memes[indexPath.row]
         self.navigationController!.pushViewController(memeDetailController, animated: true)
         

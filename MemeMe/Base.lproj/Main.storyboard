@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D130a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FAa-yC-nub">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D130a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FAa-yC-nub">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -179,6 +179,7 @@
                                 <exclude reference="YYH-5s-9ou"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="RGc-sL-rUe"/>
                                 <exclude reference="Pfo-V4-avH"/>
                                 <exclude reference="b3G-T0-EAF"/>
                                 <exclude reference="orv-y6-eU3"/>
@@ -186,7 +187,6 @@
                                 <exclude reference="gFL-84-8ue"/>
                                 <exclude reference="giR-FG-oJQ"/>
                                 <exclude reference="hjs-nu-0LK"/>
-                                <exclude reference="RGc-sL-rUe"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -195,6 +195,7 @@
                                 <include reference="YYH-5s-9ou"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="RGc-sL-rUe"/>
                                 <include reference="Pfo-V4-avH"/>
                                 <include reference="b3G-T0-EAF"/>
                                 <include reference="orv-y6-eU3"/>
@@ -202,7 +203,6 @@
                                 <include reference="gFL-84-8ue"/>
                                 <include reference="giR-FG-oJQ"/>
                                 <include reference="hjs-nu-0LK"/>
-                                <include reference="RGc-sL-rUe"/>
                             </mask>
                         </variation>
                     </view>
